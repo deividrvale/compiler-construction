@@ -1,5 +1,7 @@
 (lang dune 3.6)
 
+(using menhir 2.1)
+
 (name compiler)
 
 (generate_opam_files true)
@@ -7,9 +9,9 @@
 (source
  (github username/reponame))
 
-(authors "Author Name")
+(authors "Marc Hermes" "Deivid Vale")
 
-(maintainers "Maintainer Name")
+(maintainers "Marc Hermes" "Deivid Vale")
 
 (license LICENSE)
 
@@ -17,9 +19,12 @@
 
 (package
  (name compiler)
- (synopsis "A short synopsis")
+ (synopsis "Compiler from SPL to SMM")
  (description "A longer description")
- (depends ocaml dune)
+ (depends
+  (ocaml  (>= 4.14.0))
+  (dune   (>= 3.6.1))
+  (menhir (>= 20220210)))
  (tags
   (topics "to describe" your project)))
 
