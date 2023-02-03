@@ -1,12 +1,12 @@
-VarDecl   ::= (`var` | Type) id  `=` Exp `;`
+VarDecl ::= (`var` | Type) id  `=` Exp `;`
 
-FunDecl   ::= id `(` [ FArgs ] `)` [ `::` FunType ] `{` VarDecl* Stmt+ `}`
+FunDecl ::= id `(` [ FArgs ] `)` [ `::` FunType ] `{` VarDecl* Stmt+ `}`
 
-RetType   ::= Type | `Void`
+RetType ::= Type | `Void`
 
-FunType   ::= [ FTypes ] `->` RetType
+FunType ::= [ FTypes ] `->` RetType
 
-FTypes    ::= Type [ FTypes ]
+FTypes  ::= Type [ FTypes ]
 
 Type  ::= BasicType
         | `(` Type `,` Type `)`

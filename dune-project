@@ -20,12 +20,14 @@
 (package
  (name compiler)
  (synopsis "Compiler from SPL to SMM")
- (description "A longer description")
+ (description "A Compiler written in Ocaml; Compiling code from the
+  Simple Programming Language (SPL) to instructions of the Simple
+  Stack Machine (SSM).")
  (depends
   (ocaml  (>= 4.14.0))
   (dune   (>= 3.6.1))
   (menhir (>= 20220210)))
  (tags
-  (topics "to describe" your project)))
+  (topics "Compiler" your project)))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
