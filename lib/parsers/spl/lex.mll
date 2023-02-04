@@ -60,7 +60,6 @@ rule lexer = parse
   | ">"             { GT }
   | "&&"            { AND }
   | "||"            { OR }
-
   | identifier            { ID (Lexing.lexeme lexbuf) }
   | int          { INTEGER (int_of_string( Lexing.lexeme lexbuf )) }
   | _               { raise (SyntaxError ("Unexpected character: " ^ Lexing.lexeme lexbuf))}
