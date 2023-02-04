@@ -16,22 +16,51 @@ let newLine     = '\r' | '\n' | "\r\n"
 rule lexer = parse
   | newLine         { new_line lexbuf; lexer lexbuf }
   | espace          { lexer lexbuf }
-  | "(*"            { comment lexer lexbuf }
-  | "[]"            { NIL }
+  | "var"           { VAR }
+  | "Void"          { VOID }
+  | "tl"            { TAIL }
+  | "hd"            { HEAD }
+  | "fst"           { FST }
+  | "snd"           { SND }
+  | "if"            { IF }
+  | "else"          { ELSE }
+  | "while"         { WHILE}
+  | "return"        { RETURN }
   | "Int"           { INT }
   | "Bool"          { BOOL }
   | "Char"          { CHAR }
+  | "True"          { TRUE }
+  | "False"         { FALSE }
+  | "->"            { ARROW }
+  | "(*"            { comment lexer lexbuf }
   | "("             { LPAR }
   | ")"             { RPAR }
-  | "["             { LBRACE }
-  | "]"             { RBRACE }
-  | ":"             { CONS  }
+  | "[]"            { NIL }
+  | "["             { LBRACKET }
+  | "]"             { RBRACKET }
+  | "{"             { LBRACE }
+  | "}"             { RBRACE }
+  | "::"            { COLCOL }
+  | ":"             { CONS }
+  | ";"             { SEMICOL }
   | "."             { DOT }
   | ","             { COMMA }
-  | ";"             { SEMICOL }
+  | "+"             { PLUS }
+  | "-"             { MINUS }
   | "*"             { MULT }
+  | "/"             { DIVIDE }
+  | "%"             { MOD }
+  | "=="            { EQEQ }
+  | "!="            { NEQ }
   | "="             { EQ }
-  | "->"            { ARROW }
+  | "!"             { NEG }
+  | "<="            { LEQ }
+  | ">="            { GEQ }
+  | "<"             { LT }
+  | ">"             { GT }
+  | "&&"            { AND }
+  | "||"            { OR }
+
   | identifier            { ID (Lexing.lexeme lexbuf) }
   | int          { INTEGER (int_of_string( Lexing.lexeme lexbuf )) }
   | _               { raise (SyntaxError ("Unexpected character: " ^ Lexing.lexeme lexbuf))}

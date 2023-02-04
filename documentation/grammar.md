@@ -1,4 +1,4 @@
-VarDecl ::= (`var` | Type) id  `=` Exp `;`
+VarDecl ::= ( `var` | Type) id  `=` Exp `;`
 
 FunDecl ::= id `(` [ FArgs ] `)` [ `::` FunType ] `{` VarDecl* Stmt+ `}`
 
@@ -17,7 +17,7 @@ BasicType ::= `Int`
             | `Bool`
             | `Char`
 
-FArgs ::= [FArgs`,`] id
+FArgs ::= [ FArgs `,`] id
 
 Stmt  ::= `if` `(` Exp `)` `{` Stmt* `}` [ `else` `{` Stmt* `}` ]
         | `while` `(` Exp `)` `{` Stmt* `}`
@@ -36,7 +36,9 @@ Exp ::= id Field
       | `[]`
       | `(` Exp `,` Exp `)`
 
-Field = [ Field (`.`hd`|`.`tl`|`.`fst`|`.`snd`)] FunCall =id`(`[ActArgs]`)`
+Field   ::= [ Field (`.` `hd` | `.` `tl` | `.` `fst` | `.` `snd`)]
+
+FunCall ::= id `(`[ ActArgs ] `)`
 
 ActArgs ::= Exp [ `,` ActArgs ]
 
