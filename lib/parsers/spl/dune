@@ -1,0 +1,9 @@
+(library
+ (name spl)
+ (libraries parser))
+
+(menhir
+ (modules par))
+
+(ocamllex
+ (modules lex))
