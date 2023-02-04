@@ -66,10 +66,11 @@
 
 %token EOF
 
-%start id
+%start id debug_parser
 
 %type <string> id
 %type <string> basic_type
+%type < 'a > debug_parser
 
 %%
 
@@ -80,3 +81,10 @@ basic_type:
   | INT         { "INT"  }
   | BOOL        { "BOOL" }
   | CHAR        { "CHAR" }
+
+
+
+
+// Debug parser
+debug_parser :
+  basic_type EOF { $1 }
