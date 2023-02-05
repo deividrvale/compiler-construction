@@ -1,4 +1,4 @@
-VarDecl ::= ( `var` | Type) id  `=` Exp `;`
+VarDecl ::= ( `var` | Type ) id  `=` Exp `;`
 
 FunDecl ::= id `(` [ FArgs ] `)` [ `::` FunType ] `{` VarDecl* Stmt+ `}`
 
@@ -36,7 +36,7 @@ Exp ::= id Field
       | `[]`
       | `(` Exp `,` Exp `)`
 
-Field   ::= [ Field (`.` `hd` | `.` `tl` | `.` `fst` | `.` `snd`)]
+Field   ::= [ Field (`.` `hd` | `.` `tl` | `.` `fst` | `.` `snd`) ]
 
 FunCall ::= id `(`[ ActArgs ] `)`
 

@@ -24,7 +24,7 @@ rule lexer = parse
   | "snd"           { SND }
   | "if"            { IF }
   | "else"          { ELSE }
-  | "while"         { WHILE}
+  | "while"         { WHILE }
   | "return"        { RETURN }
   | "Int"           { INT }
   | "Bool"          { BOOL }
