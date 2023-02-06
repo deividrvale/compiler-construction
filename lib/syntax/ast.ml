@@ -48,7 +48,7 @@ and exp =
   | Tuple   of exp * exp
 
 
-and field = (field_option list) option
+and field = (field_options list) option
 and field_options =
   | Hd | Tl | Fst | Snd
 
