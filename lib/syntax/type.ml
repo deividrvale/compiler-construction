@@ -1,7 +1,7 @@
 
 type retType = Type of types | Void
 
-and funType = Arrow of (ftype option) * retType
+and funType = Arrow of (fType option) * retType
 
 and fType   = types list
 
