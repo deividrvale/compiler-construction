@@ -1,5 +1,5 @@
 %{
-
+  open Syntax.Type
 %}
 
 %token <string> ID
@@ -69,7 +69,7 @@
 %start id debug_parser
 
 %type <string> id
-%type <string> basic_type
+%type < basicTypes > basic_type
 %type < 'a > debug_parser
 
 %%
@@ -78,12 +78,9 @@ id :
   ID EOF { $1 }
 
 basic_type:
-  | INT         { "INT"  }
-  | BOOL        { "BOOL" }
-  | CHAR        { "CHAR" }
-
-
-
+  | INT         { Int }
+  | BOOL        { Bool }
+  | CHAR        { Char }
 
 // Debug parser
 debug_parser :

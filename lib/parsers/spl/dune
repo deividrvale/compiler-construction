@@ -1,6 +1,6 @@
 (library
  (name spl)
- (libraries parser))
+ (libraries parser syntax))
 
 (menhir
  (modules par))
