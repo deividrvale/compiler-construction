@@ -1,0 +1,9 @@
+(library
+ (name poly_parser)
+ (libraries parser syntax))
+
+(menhir
+ (modules par))
+
+(ocamllex
+ (modules lex))
